@@ -78,7 +78,8 @@ void DrawEllipse(float x, float y, float width, float height, float thickness, f
 	else target->DrawEllipse(D2D1::Ellipse(D2D1::Point2F(x, y), width, height), solid_brush, thickness); 
 }
 
-void d2oSetup(HWND tWindow) {
+void d2oSetup(HWND tWindow) 
+{
 	targetWindow = tWindow;
 	WNDCLASS wc = { };
 	wc.lpfnWndProc = WindowProc;
@@ -104,7 +105,8 @@ void d2oSetup(HWND tWindow) {
 		DWRITE_FONT_STYLE_NORMAL, DWRITE_FONT_STRETCH_NORMAL, 10.0f, L"en-us", &w_format);
 }
 
-void mainLoop() {
+void mainLoop() 
+{
 	MSG message;
 	message.message = WM_NULL;
 	ShowWindow(overlayWindow, 1);
@@ -126,14 +128,17 @@ void mainLoop() {
 		D2D1_SIZE_U siz;
 		siz.height = ((info.rcClient.bottom) - (info.rcClient.top));
 		siz.width = ((info.rcClient.right) - (info.rcClient.left));
-		if (!IsIconic(overlayWindow)) {
+		if (!IsIconic(overlayWindow)) 
+		{
 			SetWindowPos(overlayWindow, NULL, info.rcClient.left, info.rcClient.top, siz.width, siz.height, SWP_SHOWWINDOW);
 			target->Resize(&siz);
 		}
 		target->BeginDraw();
 		target->Clear(D2D1::ColorF(0, 0, 0, 0));
-		if (drawLoopCallback != NULL) {
-			if (o_Foreground) {
+		if (drawLoopCallback != NULL) 
+		{
+			if (o_Foreground) 
+			{
 				if (GetForegroundWindow() == targetWindow) 
 					goto toDraw;
 				else goto noDraw;
@@ -144,7 +149,8 @@ void mainLoop() {
 			time_t frameTime = postTime - preTime;
 			preTime = postTime;
 
-			if (o_DrawFPS) {
+			if (o_DrawFPS) 
+			{
 				if (postTime - showTime > 100) {
 					fps = 1000 / (float)frameTime;
 					showTime = postTime;
@@ -152,9 +158,11 @@ void mainLoop() {
 				DrawString(std::to_string(fps), 20, siz.width - 50, 0, 0, 1, 0);
 			}
 
-			if (o_VSync) {
+			if (o_VSync) 
+			{
 				int pausetime = 17 - frameTime;
-				if (pausetime > 0 && pausetime < 30) {
+				if (pausetime > 0 && pausetime < 30) 
+				{
 					Sleep(pausetime);
 				}
 			}
@@ -197,29 +205,35 @@ BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lParam)
 
 DWORD WINAPI OverlayThread(LPVOID lpParam)
 {
-	if (lpParam == NULL) {
+	if (lpParam == NULL) 
+	{
 		EnumWindows(EnumWindowsProc, NULL);
 	}
-	else {
+	else 
+	{
 		enumWindow = (HWND)lpParam;
 	}
 	d2oSetup(enumWindow);
-	for (;;) {
+	for (;;) 
+	{
 		mainLoop();
 	}
 }
 
-void DirectOverlaySetup(DirectOverlayCallback callback) {
+void DirectOverlaySetup(DirectOverlayCallback callback) 
+{
 	drawLoopCallback = callback;
 	CreateThread(0, 0, OverlayThread, NULL, 0, NULL);
 }
 
-void DirectOverlaySetup(DirectOverlayCallback callback, HWND _targetWindow) {
+void DirectOverlaySetup(DirectOverlayCallback callback, HWND _targetWindow) 
+{
 	drawLoopCallback = callback;
 	CreateThread(0, 0, OverlayThread, _targetWindow, 0, NULL);
 }
 
-void DirectOverlaySetOption(DWORD option) {
+void DirectOverlaySetOption(DWORD option) 
+{
 	if (option & D2DOV_REQUIRE_FOREGROUND) o_Foreground = true;
 	if (option & D2DOV_DRAW_FPS) o_DrawFPS = true;
 	if (option & D2DOV_VSYNC) o_VSync = true;

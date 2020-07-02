@@ -115,10 +115,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="WallhackManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectOverlay.h" />
+    <ClInclude Include="Main.h" />
+    <ClInclude Include="Memory.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="WallhackManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

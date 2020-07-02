@@ -23,6 +23,7 @@
 	You may OR them together '|', you must set them before calling DirectOverlaySetup.
 
 */
+#pragma once
 
 #include <Windows.h>
 #include <string>

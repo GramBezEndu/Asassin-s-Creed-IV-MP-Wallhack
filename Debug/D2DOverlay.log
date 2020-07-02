@@ -1,0 +1,7 @@
+﻿  Main.cpp
+c:\users\user\documents\github\d2doverlay\main.cpp(13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\user\documents\github\d2doverlay\main.cpp(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  WallhackManager.cpp
+c:\users\user\documents\github\d2doverlay\wallhackmanager.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  D2DOverlay.vcxproj -> C:\Users\user\Documents\GitHub\D2DOverlay\Debug\D2DOverlay.exe
