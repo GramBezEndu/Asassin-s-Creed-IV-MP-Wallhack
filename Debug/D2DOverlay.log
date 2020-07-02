@@ -1,2 +1,10 @@
-﻿  LINK : C:\Users\user\Documents\GitHub\D2DOverlay\Debug\D2DOverlay.exe not found or not built by the last incremental link; performing full link
+﻿  Main.cpp
+c:\users\user\documents\github\d2doverlay\main.cpp(13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\user\documents\github\d2doverlay\main.cpp(66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Memory.cpp
+c:\users\user\documents\github\d2doverlay\memory.cpp(41): warning C4018: '<': signed/unsigned mismatch
+  WallhackManager.cpp
+c:\users\user\documents\github\d2doverlay\wallhackmanager.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+c:\users\user\documents\github\d2doverlay\memory.cpp(63): warning C4715: 'Memory::GetModuleBaseAddress': not all control paths return a value
   D2DOverlay.vcxproj -> C:\Users\user\Documents\GitHub\D2DOverlay\Debug\D2DOverlay.exe

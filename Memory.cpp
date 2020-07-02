@@ -54,8 +54,8 @@ uintptr_t Memory::GetModuleBaseAddress()
 					{
 						cout << "[DEBUG] Module name: " << szModName << "\n";
 						cout << "[DEBUG] Module base address: " << hMods[i] << "\n";
-						return (uintptr_t)hMods[i];
 					}
+					return (uintptr_t)hMods[i];
 				}
 			}
 		}
