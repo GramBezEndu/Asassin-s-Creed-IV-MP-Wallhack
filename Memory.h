@@ -14,7 +14,7 @@ private:
 	HANDLE hProcess;
 	uintptr_t GetModuleBaseAddress();
 public:
-	bool Debug = true;
+	bool Debug = false;
 	DWORD ModuleBaseAddress;
 	Memory(HWND handle);
 	~Memory();
