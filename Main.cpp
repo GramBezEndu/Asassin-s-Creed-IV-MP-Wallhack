@@ -22,6 +22,7 @@ void Main::main()
 	{
 		std::cout << "Could not find Assassin's Creed IV Black Flag window\n";
 		std::cout << "Open the game first, then restart this program";
+		getchar();
 	}
 	else
 	{
